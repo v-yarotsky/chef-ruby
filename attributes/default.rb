@@ -6,12 +6,6 @@ default[:ruby][:path]     = "/opt/ruby-#{default[:ruby][:version]}"
 default[:ruby][:ruby]     = "#{default[:ruby][:path]}/bin/ruby"
 default[:ruby][:gem_home] = "#{default[:ruby][:path]}/lib/ruby/gems/1.9"
 
-default[:ruby][:libyaml][:version]  = "0.1.4"
-default[:ruby][:libyaml][:archive]  = "http://pyyaml.org/download/libyaml/yaml-#{default[:ruby][:libyaml][:version]}.tar.gz"
-default[:ruby][:libyaml][:checksum] = "36c852831d02cf90508c29852361d01b"
-default[:ruby][:libyaml][:file]     = File.basename(default[:ruby][:libyaml][:archive])
-default[:ruby][:libyaml][:path]     = "/opt/yaml-#{default[:ruby][:libyaml][:version]}"
-
 default[:ruby][:rubygems][:version]  = "2.0.7"
 default[:ruby][:rubygems][:archive]  = "http://production.cf.rubygems.org/rubygems/rubygems-#{default[:ruby][:rubygems][:version]}.tgz"
 default[:ruby][:rubygems][:checksum] = "9046700f1222712fedfb836fafa08c50"

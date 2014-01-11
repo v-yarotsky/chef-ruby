@@ -1,5 +1,4 @@
 include_recipe "build-essential"
-include_recipe "ruby::libyaml_source"
 
 %w(
   build-essential
@@ -40,13 +39,9 @@ bash "Install Ruby (MRI)" do
     tar xvf #{ruby[:file]}
     cd #{ruby_folder}
 
-    export LDFLAGS="-L#{ruby[:libyaml][:path]}/lib"
-    export CFLAGS="-O3 -I#{ruby[:libyaml][:path]}/include $CFLAGS"
-
     ./configure --enable-shared \\
                 --disable-install-doc \\
                 --with-out-ext=tk \\
-                --with-opt-dir=#{ruby[:libyaml][:path]} \\
                 --prefix=#{ruby[:path]}
     make &&  make install
   SH
